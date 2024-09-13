@@ -32,17 +32,23 @@ This endpoint performs sentiment analysis on the provided text.
 - **Method:** POST
 - **Content-Type:** application/json
 - **Request Body:**
-json { "text": "Your input text here" }
+```json
+{ "text": "Your input text here" }
+```
 
 **Response**
 
 - **Status Code:** 200 OK
 - **Content-Type:** application/json
 - **Response Body:**
-json { "data": [ { "label": "POSITIVE", "score": 0.99 } ] }
+```json
+{ "data": [ { "label": "POSITIVE", "score": 0.99 } ] }
+```
 
 **Example**
-bash curl -X POST http://localhost:3000/api/sentimental \ -H "Content-Type: application/json" \ -d '{"text": "I love this product!"}'
+```bash
+curl -X POST http://localhost:3000/api/sentimental \ -H "Content-Type: application/json" \ -d '{"text": "I love this product!"}'
+```
 
 ### 2. POST /api/summarize
 
@@ -53,18 +59,21 @@ This endpoint performs text summarization on the provided text.
 - **Method:** POST
 - **Content-Type:** application/json
 - **Request Body:**
-json { "text": "Your long input text here" }
-
+```json
+{ "text": "Your long input text here" }
+```
 **Response**
 
 - **Status Code:** 200 OK
 - **Content-Type:** application/json
 - **Response Body:**
-json { "data": [ { "summary_text": "Shortened summary of the input text." } ] }
-
+```json
+{ "data": [ { "summary_text": "Shortened summary of the input text." } ] }
+```
 **Example**
-bash curl -X POST http://localhost:3000/api/summarize \ -H "Content-Type: application/json" \ -d '{"text": "This is a long article or paragraph to be summarized."}'
-
+```bash
+curl -X POST http://localhost:3000/api/summarize \ -H "Content-Type: application/json" \ -d '{"text": "This is a long article or paragraph to be summarized."}'
+```
 ### 3. POST /api/image-recognition
 
 This endpoint performs image classification on the provided image input (base64 encoded).
@@ -74,17 +83,22 @@ This endpoint performs image classification on the provided image input (base64 
 - **Method:** POST
 - **Content-Type:** application/json
 - **Request Body:**
-json { "image": "Base64 encoded image data here" }
-
+```json
+{ "image": "Base64 encoded image data here" }
+```
 **Response**
 
 - **Status Code:** 200 OK
 - **Content-Type:** application/json
 - **Response Body:**
-json { "data": [ { "label": "dog", "score": 0.98 }, { "label": "cat", "score": 0.02 } ] }
+```json
+{ "data": [ { "label": "dog", "score": 0.98 }, { "label": "cat", "score": 0.02 } ] }
+```
 
 **Example**
-bash curl -X POST http://localhost:3000/api/image-recognition \ -H "Content-Type: application/json" \ -d '{"image": "base64imagestring_here"}'
+```bash
+ curl -X POST http://localhost:3000/api/image-recognition \ -H "Content-Type: application/json" \ -d '{"image": "base64imagestring_here"}'
+```
 
 ## Error Responses
 
@@ -94,8 +108,9 @@ In case of invalid requests or errors, the API will return:
 - **Content-Type:** application/json
 
 **Example Error Response**
-json { "error": "Invalid input" }
-
+```json
+{ "error": "Invalid input" }
+```
 ## Running the Server
 
 To start the server, ensure the dependencies are installed and run:
